@@ -19,9 +19,9 @@ systemctl stop ufw && systemctl disable ufw >/dev/null 2>&1
 systemctl stop apparmor && systemctl disable apparmor >/dev/null 2>&1
 
 echo "[TASK 4] Setting Local DNS Using Hosts file"
-echo "192.168.10.10 k8s-m" >> /etc/hosts
-for (( i=1; i<=$1; i++  )); do echo "192.168.10.10$i k8s-w$i" >> /etc/hosts; done
-echo "192.168.20.100 k8s-w0" >> /etc/hosts
+echo "192.168.56.10 k8s-m" >> /etc/hosts
+for (( i=1; i<=$1; i++  )); do echo "192.168.56.10$i k8s-w$i" >> /etc/hosts; done
+echo "192.168.57.100 k8s-w0" >> /etc/hosts
 
 echo "[TASK 5] Add Kernel setting - IP Forwarding"
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf

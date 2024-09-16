@@ -11,8 +11,8 @@ network:
       addresses:
       - $IP
       routes:
-      - to: 192.168.20.0/24
-        via: 192.168.10.254
+      - to: 192.168.57.0/24
+        via: 192.168.56.254
 EOT
 chmod 600 /etc/netplan/50-vagrant.yaml
 netplan apply
